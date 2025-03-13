@@ -5,7 +5,7 @@ const useSocket = (): Socket | null => {
   const [socket, setSocket] = useState<Socket | null>(null);
 
   useEffect(() => {
-    const socketInstance: Socket = io("http://localhost:5000"); // Backend URL
+    const socketInstance: Socket = io(process.env.NEXT_PUBLIC_URL); // Backend URL
     setSocket(socketInstance);
 
     return () => {
